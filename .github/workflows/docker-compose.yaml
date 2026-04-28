@@ -1,0 +1,46 @@
+version: '3' 
+services:
+  db:
+    image: mysql
+    container_name: mysql_db 
+    environment:
+           MYSQL_ROOT_PASSWORD: secret
+    volumes:
+           - mysqldata:/var/lib/mysql 
+    networks:
+           - cloudtechnetwork1
+
+  webserver:
+    image: nginx
+    depends_on:
+            - db
+    container_name: mywebserver
+    ports:
+         - 8000:80 
+    networks:
+            - cloudtechnetwork1
+
+  centos:
+    image: centos:7.9.2009
+    container_name: mycentos
+    environment: 
+       OS_TYPE: CentOS
+    volumes:
+      - /mnt/d/DockerNew/dockercompose/volumebind:/tmp/volume-mount 
+    networks:
+      - cloudtechnetwork2 
+
+  ubuntu:
+    build: 
+      context: . 
+      dockerfile: dockerfile 
+    networks:
+      - cloudtechnetwork2
+    image: compose-ubuntu-image:v1 
+    container_name: myubuntu 
+
+networks:
+  cloudtechnetwork1: {}
+  cloudtechnetwork2: {}
+volumes:
+  mysqldata: {}   
