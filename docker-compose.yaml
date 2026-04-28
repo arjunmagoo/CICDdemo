@@ -30,14 +30,14 @@ services:
     networks:
       - cloudtechnetwork2 
 
-  ubuntu:
-    build: 
-      context: . 
-      dockerfile: dockerfile 
-    networks:
-      - cloudtechnetwork2
-    image: compose-ubuntu-image:v1 
-    container_name: myubuntu 
+#  ubuntu:
+#     build: 
+#       context: . 
+#       dockerfile: dockerfile 
+#     networks:
+#       - cloudtechnetwork2
+#     image: compose-ubuntu-image:v1 
+#     container_name: myubuntu 
 
 networks:
   cloudtechnetwork1: {}
