@@ -28,7 +28,7 @@ services:
     volumes:
       - /mnt/d/DockerNew/dockercompose/volumebind:/tmp/volume-mount 
     networks:
-      - cloudtechnetwork2 
+      - cloudtechnetwork3 
 
 #  ubuntu:
 #     build: 
@@ -42,5 +42,6 @@ services:
 networks:
   cloudtechnetwork1: {}
   cloudtechnetwork2: {}
+  cloudtechnetwork3: {}
 volumes:
   mysqldata: {}   
