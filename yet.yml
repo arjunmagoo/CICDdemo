@@ -1,0 +1,22 @@
+name :  "Arjun" 
+Age :  32
+
+server : #this wil create dictonary 
+  name : "server1"
+  capacity : 50GB
+
+social_media : #this will create list
+  - insta link
+  - google link
+  - twitter 
+testing : | #multiline string
+  this is multi line
+  string and you 
+  can write multiline code here 
+list_of_servers :
+  - server_1 : 
+    name : "ec2"
+    volume : 7gb
+  - server_2 : 
+    name : "fargate"
+    volume : 5gb
